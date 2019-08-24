@@ -1,0 +1,31 @@
+Bellman-Ford Algorithm for single source shortest path
+
+from a given source, the shortest paths all vertices is computed. 
+works well with edges with Negative weights.
+Time Complexity O( V * (E - 1) ).
+Worst Case, If the graph is complete, If there are V vertices, there can be V * ( V -1 )/2 edges.
+so, the time complexity would be O( V * V * V ) => Cubic.
+Does Not Work for Negative Weight Cycle!!!
+
+Bellman-Ford(int src, List<Integer>[] adj) {
+   int noV = adj.size(); // number of Vertices 
+   int[] dist = new int[noV]; 
+   for (int i=1; i <noV; ++i) {
+      dist[i] = Integer.MAX_VALUE;
+   }
+   dist[src]= 0;
+   
+   for (int i=1; i <= noV-1; ++i)  {
+     RelaxEdges(adj, dist);
+   }
+   return dist;
+}
+RelaxEdges(List<Integer>[] adj, dist) {  
+  for (int u=0; u < adj.length; ++u ) {
+     for (int v: adj[u]) {
+	    if (dist[u]+ v < dist[v]) {
+		   dist[v] = dist[u] + v;
+		}
+	 }
+  }
+}
