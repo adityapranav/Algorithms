@@ -1,0 +1,35 @@
+Chapter 2 from CLRS: Getting Started 
+
+Insertion Sort 
+
+Input: a1,a2......,an  =>  A sequence of n numbers 
+Output:  a permutation of the sequence such that (a1',a2'......., an') , a1' <= a2'.....<= an'
+
+An efficient algorithm for sorting small number of elements
+
+Works in same way as playing cards. 
+
+start with empty hand. Remove each card from pile and insert into the right position in left hand.
+
+for choosing the right position, compare the picked card with all the cards in hand from right to left.
+
+
+for i:=2 to n {
+   int key = a[i];
+   rightposition = getRightPosition(i-1, a, key);
+   a[rightposition] = key;
+}
+
+getRightPosition(int x, int[] a, int key) {
+   for i:=x to 1 {
+     if (a[i] > key) {
+	    a[i+1] = a[i];
+	 }else {
+	    return i+1;
+	 }
+   }
+   return i+1;
+}
+
+
+
