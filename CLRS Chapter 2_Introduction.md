@@ -13,6 +13,7 @@ start with empty hand. Remove each card from pile and insert into the right posi
 
 for choosing the right position, compare the picked card with all the cards in hand from right to left.
 
+```
 
 for i:=2 to n {
    int key = a[i];
@@ -30,9 +31,11 @@ getRightPosition(int x, int[] a, int key) {
    }
    return i+1;
 }
+```
 
 # Exercises 2.2-2 in CLRS 
 
+```
 // All Indices start with 1. If you are using this code for actual program, change the index to be starting
 from zero.
 sort(int[] A) {
@@ -53,10 +56,10 @@ int findSmallest(int[] A, int i) {
   return index;
 }
 
-
+```
 
 ## code without Method call 
-
+```
 sort(int[] A, int n) {
 
   for i:=1 to N-1
@@ -69,7 +72,7 @@ sort(int[] A, int n) {
 	done
 	swap(A, i, minIndex)	
 }
-
+```
 ## Loop Invariant for Selection Sort 
 
 Base Condition ( Before the loop ) :-> The Array is Not sorted.
