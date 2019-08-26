@@ -19,7 +19,8 @@ Combine: Merge the sorted subarrays to produce the final sorted array.
 
 ## Merge with a new array for output
 
-MERGE(A, p, q, r)  // A[p..q] and A[q+1..r] are sorted
+// A[p..q] and A[q+1..r] are sorted
+MERGE(A, p, q, r)  
 {
    
    left = p 
@@ -50,7 +51,8 @@ MERGE(A, p, q, r)  // A[p..q] and A[q+1..r] are sorted
 
 ## In Place Merging Algorithm with two new arrays to store sorted arrays with sentinels
 
-MERGE(A, p, q, r)  // A[p..q] and A[q+1..r] are sorted
+// A[p..q] and A[q+1..r] are sorted
+MERGE(A, p, q, r)  
 {
   leftSize = q-p+1;
   L1 = new int[leftSize+1];
